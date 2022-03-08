@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VegaIT_Konteh_HakatonAPI.Data\VegaIT_Konteh_HakatonAPI.Data.csproj" />
+    <ProjectReference Include="..\VegaIT_Konteh_HakatonAPI.Data\VegaIT_Konteh_Hackathon.Data.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,6 +4,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegaIT_Konteh_HackathonAPI", "VegaIT_Konteh_HackathonAPI\VegaIT_Konteh_HackathonAPI.csproj", "{B223C60B-3FF5-41D0-893D-CE8CC34638F1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5A336C41-49B0-4060-A08A-6317F507EFBA} = {5A336C41-49B0-4060-A08A-6317F507EFBA}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegaIT_Konteh_HakatonAPI.Data", "VegaIT_Konteh_HakatonAPI.Data\VegaIT_Konteh_HakatonAPI.Data.csproj", "{5A336C41-49B0-4060-A08A-6317F507EFBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{B223C60B-3FF5-41D0-893D-CE8CC34638F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B223C60B-3FF5-41D0-893D-CE8CC34638F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B223C60B-3FF5-41D0-893D-CE8CC34638F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A336C41-49B0-4060-A08A-6317F507EFBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A336C41-49B0-4060-A08A-6317F507EFBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A336C41-49B0-4060-A08A-6317F507EFBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A336C41-49B0-4060-A08A-6317F507EFBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

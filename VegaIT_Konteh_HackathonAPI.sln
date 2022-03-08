@@ -8,9 +8,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegaIT_Konteh_HackathonAPI"
 		{5A336C41-49B0-4060-A08A-6317F507EFBA} = {5A336C41-49B0-4060-A08A-6317F507EFBA}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegaIT_Konteh_Hackathon.Data", "VegaIT_Konteh_HakatonAPI.Data\VegaIT_Konteh_Hackathon.Data.csproj", "{5A336C41-49B0-4060-A08A-6317F507EFBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegaIT_Konteh_HakatonAPI.Data", "VegaIT_Konteh_HakatonAPI.Data\VegaIT_Konteh_HakatonAPI.Data.csproj", "{5A336C41-49B0-4060-A08A-6317F507EFBA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VegaIT_Konteh_Hackathon.Repository", "VegaIT_Konteh_Hakaton.Repository\VegaIT_Konteh_Hackathon.Repository.csproj", "{086D76FF-9426-4FA4-B471-7592DA701A87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VegaIT_Konteh_Hakaton.Repository", "VegaIT_Konteh_Hakaton.Repository\VegaIT_Konteh_Hakaton.Repository.csproj", "{086D76FF-9426-4FA4-B471-7592DA701A87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

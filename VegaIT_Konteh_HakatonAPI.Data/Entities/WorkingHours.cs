@@ -11,8 +11,8 @@ namespace VegaIT_Konteh_HakatonAPI.Data.Entities
     public class WorkingHours
     {
         public int ID { get; set; }
-        public DateTime Opens { get; set; }
-        public DateTime Closes { get; set; }
+        public TimeSpan Opens { get; set; }
+        public TimeSpan Closes { get; set; }
         public virtual ICollection<Faculty> Faculties { get; set; }
     }
 }

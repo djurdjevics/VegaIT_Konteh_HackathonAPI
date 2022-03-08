@@ -12,7 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using VegaIT_Konteh_Hackathon.Repository;
+using VegaIT_Konteh_Hakaton.Repository;
 using VegaIT_Konteh_HakatonAPI.Data;
 using VegaIT_Konteh_HakatonAPI.Data.Context;
 
@@ -43,7 +43,14 @@ namespace VegaIT_Konteh_HackathonAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "VegaIT_Konteh_HackathonAPI", Version = "v1" });
             });
-            services.AddTransient<IFacultiesRepository, FacultiesRepository>();
+            services.AddTransient<IFacultyRepository, FacultyRepository>();
+            services.AddTransient<IRoomRepository, RoomRepository>();
+            services.AddTransient<IDeskRepository, DeskRepository>();
+
+            services.AddControllersWithViews()
+    .AddNewtonsoftJson(options =>
+    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

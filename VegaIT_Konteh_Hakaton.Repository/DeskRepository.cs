@@ -15,6 +15,8 @@ namespace VegaIT_Konteh_Hakaton.Repository
         Task<Desk> Delete(object id);
         Task<IEnumerable<Desk>> GetDeskByRoom(Guid id);
         void Save();
+        int GetNumOfTablesForRoom(Guid roomId);
+        Desk UpdateOrder(Desk updateDesk);
     }
     public class DeskRepository : IDeskRepository
     {
@@ -43,7 +45,11 @@ namespace VegaIT_Konteh_Hakaton.Repository
         {
             Desk existing = await hackathonContext.Desks.FindAsync(id);
             var result = hackathonContext.Desks.Remove(existing);
-            Save();
+            var query = from deskQuery in hackathonContext.Desks where existing.Order < deskQuery.Order && deskQuery.RoomID == existing.RoomID select deskQuery;
+            foreach (var d in query)
+            {
+                UpdateOrder(d);
+            }
             return result.Entity;
         }
 
@@ -51,6 +57,20 @@ namespace VegaIT_Konteh_Hakaton.Repository
         {
             var result = hackathonContext.Desks.Add(desk);
             return result.Entity;
+        }
+
+        public int GetNumOfTablesForRoom(Guid roomId)
+        {
+             var data = hackathonContext.Desks.Where(x => x.RoomID.Equals(roomId)).ToList().Count;
+             return data;
+        }
+
+        public Desk UpdateOrder(Desk updateDesk)
+        {
+            updateDesk.Order = updateDesk.Order - 1;
+            var result = hackathonContext.Attach(updateDesk).Entity;
+            hackathonContext.Entry(updateDesk).State = EntityState.Modified;
+            return result;
         }
     }
 }

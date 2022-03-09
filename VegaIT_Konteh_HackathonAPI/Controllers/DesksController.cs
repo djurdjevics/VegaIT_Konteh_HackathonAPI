@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using VegaIT_Konteh_Hackathon.Domain.DomainModels;
 using VegaIT_Konteh_Hackathon.Domain.Interfaces;
+using VegaIT_Konteh_HackathonAPI.Models;
 
 namespace VegaIT_Konteh_HackathonAPI.Controllers
 {
@@ -24,9 +25,10 @@ namespace VegaIT_Konteh_HackathonAPI.Controllers
             return Ok(result);
         }
         [HttpPost]
-        public  ActionResult<IEnumerable<DeskDomainModel>> InsertDesk([FromBody] DeskDomainModel desk)
+        public  ActionResult<IEnumerable<DeskDomainModel>> InsertDesk([FromBody] CreateDeskModel desk)
         {
-            var result =  deskService.Insert(desk);
+            DeskDomainModel deskDomainModel = new DeskDomainModel { RoomID = desk.RoomID };
+            var result =  deskService.Insert(deskDomainModel);
             return Ok(result);
         }
         [HttpDelete]

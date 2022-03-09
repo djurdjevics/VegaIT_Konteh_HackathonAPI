@@ -89,6 +89,10 @@ namespace VegaIT_Konteh_Hackathon.Domain.Services
             
             var data = deskRepository.Insert(deskToInsert);
             deskRepository.Save();
+            deskDomainModel.ID = deskToInsert.ID;
+            deskDomainModel.Order = deskToInsert.Order;
+            deskDomainModel.Available = deskToInsert.Available;
+            deskDomainModel.RoomID = deskToInsert.RoomID;
             return deskDomainModel;
         }
     }

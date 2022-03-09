@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VegaIT_Konteh_Hackathon.Domain\VegaIT_Konteh_Hackathon.Domain.csproj" />
     <ProjectReference Include="..\VegaIT_Konteh_Hakaton.Repository\VegaIT_Konteh_Hakaton.Repository.csproj" />
     <ProjectReference Include="..\VegaIT_Konteh_HakatonAPI.Data\VegaIT_Konteh_HakatonAPI.Data.csproj" />
   </ItemGroup>

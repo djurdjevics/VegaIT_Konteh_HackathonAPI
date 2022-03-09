@@ -12,6 +12,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using VegaIT_Konteh_Hackathon.Domain.Interfaces;
+using VegaIT_Konteh_Hackathon.Domain.Services;
 using VegaIT_Konteh_Hakaton.Repository;
 using VegaIT_Konteh_HakatonAPI.Data;
 using VegaIT_Konteh_HakatonAPI.Data.Context;
@@ -39,13 +41,20 @@ namespace VegaIT_Konteh_HackathonAPI
             });
 
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "VegaIT_Konteh_HackathonAPI", Version = "v1" });
-            });
+            //services.AddSwaggerGen(c =>
+            //{
+            //    c.SwaggerDoc("v1", new OpenApiInfo { Title = "VegaIT_Konteh_HackathonAPI", Version = "v1" });
+            //});
+
+            //Repositories
             services.AddTransient<IFacultyRepository, FacultyRepository>();
             services.AddTransient<IRoomRepository, RoomRepository>();
             services.AddTransient<IDeskRepository, DeskRepository>();
+
+            //Services
+            services.AddTransient<IFacultyService, FacultyService>();
+            services.AddTransient<IRoomService, RoomService>();
+            services.AddTransient<IDeskService, DeskService>();
 
             services.AddControllersWithViews()
     .AddNewtonsoftJson(options =>
@@ -59,8 +68,8 @@ namespace VegaIT_Konteh_HackathonAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "VegaIT_Konteh_HackathonAPI v1"));
+                //app.UseSwagger();
+                //app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "VegaIT_Konteh_HackathonAPI v1"));
             }
 
             app.UseHttpsRedirection();
